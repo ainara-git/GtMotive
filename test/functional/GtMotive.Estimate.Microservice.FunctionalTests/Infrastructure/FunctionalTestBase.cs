@@ -1,0 +1,26 @@
+﻿using Microsoft.AspNetCore.TestHost;
+using System.Threading.Tasks;
+using Xunit;
+
+namespace GtMotive.Estimate.Microservice.FunctionalTests.Infrastructure
+{
+    [Collection(TestCollections.Functional)]
+    public abstract class FunctionalTestBase(CompositionRootTestFixture fixture) : IAsyncLifetime
+    {
+        public const int QueueWaitingTimeInMilliseconds = 1000;
+
+        protected CompositionRootTestFixture Fixture { get; } = fixture;
+
+        protected TestServer Server => Fixture.Server;
+
+        public async Task InitializeAsync()
+        {
+            await Task.CompletedTask;
+        }
+
+        public async Task DisposeAsync()
+        {
+            await Task.CompletedTask;
+        }
+    }
+}

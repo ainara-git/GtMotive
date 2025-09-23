@@ -1,0 +1,57 @@
+services:
+  mongo:
+    image: mongo:7.0
+    container_name: mongo
+    command: ["mongod", "--bind_ip_all"]
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+
+  api:
+    build:
+      context: .
+      dockerfile: src/GtMotive.Estimate.Microservice.Host/Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - mongo
+      - rabbitmq
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - MongoDb__ConnectionString=mongodb://mongo:27017/gtMotiveEstimate
+      - MongoDb__DbName=gtMotiveEstimate
+      - RabbitMq__HostName=rabbitmq
+      - RabbitMq__Port=5672
+      - RabbitMq__UserName=admin
+      - RabbitMq__Password=password
+    restart: unless-stopped
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    depends_on:
+      - mongo
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_URL: "mongodb://mongo:27017/"
+    restart: unless-stopped
+
+  rabbitmq:
+    image: bitnami/rabbitmq:latest
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_USERNAME: admin
+      RABBITMQ_PASSWORD: password
+      RABBITMQ_MANAGEMENT_ALLOW_WEB_ACCESS: true
+      RABBITMQ_MANAGEMENT_BIND_IP: 0.0.0.0
+    volumes:
+      - rabbitmq_data:/bitnami/rabbitmq
+
+volumes:
+  mongo_data:
+  rabbitmq_data:
