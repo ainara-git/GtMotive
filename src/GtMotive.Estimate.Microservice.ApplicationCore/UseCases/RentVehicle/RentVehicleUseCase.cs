@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using GtMotive.Estimate.Microservice.ApplicationCore.Extensions;
-using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Common;
 using GtMotive.Estimate.Microservice.Domain.Entities;
 using GtMotive.Estimate.Microservice.Domain.Events;
 using GtMotive.Estimate.Microservice.Domain.Interfaces;

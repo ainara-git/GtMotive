@@ -3,7 +3,8 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using GtMotive.Estimate.Microservice.Api;
 using GtMotive.Estimate.Microservice.Infrastructure;
-using GtMotive.Estimate.Microservice.Infrastructure.Messaging.Settings;
+using GtMotive.Estimate.Microservice.Infrastructure.MongoDb.Settings;
+using GtMotive.Estimate.Microservice.Infrastructure.RabbitMq.Settings;
 using MediatR;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
@@ -108,7 +109,7 @@ namespace GtMotive.Estimate.Microservice.FunctionalTests.Infrastructure
             services.AddLogging();
             services.AddBaseInfrastructure(true);
 
-            services.Configure<Microservice.Infrastructure.Persistence.MongoDb.Settings.MongoDbSettings>(options =>
+            services.Configure<MongoDbSettings>(options =>
             {
                 options.ConnectionString = MongoConnectionString;
                 options.DbName = "gtMotiveEstimate";

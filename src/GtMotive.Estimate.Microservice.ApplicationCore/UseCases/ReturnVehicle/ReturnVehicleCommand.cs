@@ -1,5 +1,4 @@
-﻿using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Common;
-using MediatR;
+﻿using MediatR;
 
 namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.ReturnVehicle
 {

@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "GtMotive.Estimate.Microservice.Host": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:59588/swagger/index.html",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:59587;http://localhost:59588"
+    }
+  }
+}

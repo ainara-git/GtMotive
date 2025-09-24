@@ -1,5 +1,4 @@
-﻿using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Common;
-using GtMotive.Estimate.Microservice.Domain.Entities;
+﻿using GtMotive.Estimate.Microservice.Domain.Entities;
 
 namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.GetAvailableVehicles
 {

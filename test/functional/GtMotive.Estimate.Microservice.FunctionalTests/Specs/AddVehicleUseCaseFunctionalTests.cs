@@ -2,8 +2,8 @@
 using System.Threading;
 using System.Threading.Tasks;
 using GtMotive.Estimate.Microservice.Api.UseCases;
+using GtMotive.Estimate.Microservice.ApplicationCore.UseCases;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.AddVehicle;
-using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Common;
 using GtMotive.Estimate.Microservice.Domain.Common;
 using GtMotive.Estimate.Microservice.FunctionalTests.Infrastructure;
 using Microsoft.AspNetCore.Mvc;

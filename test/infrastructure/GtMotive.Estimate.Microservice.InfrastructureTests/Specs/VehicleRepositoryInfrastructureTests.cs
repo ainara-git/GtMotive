@@ -3,9 +3,11 @@ using System.Threading.Tasks;
 using AutoMapper;
 using GtMotive.Estimate.Microservice.Domain.Entities;
 using GtMotive.Estimate.Microservice.Domain.ValueObjects;
-using GtMotive.Estimate.Microservice.Infrastructure.Persistence.MongoDb;
-using GtMotive.Estimate.Microservice.Infrastructure.Persistence.MongoDb.Mappers;
-using GtMotive.Estimate.Microservice.Infrastructure.Persistence.MongoDb.Repositories;
+using GtMotive.Estimate.Microservice.Infrastructure.MongoDb;
+using GtMotive.Estimate.Microservice.Infrastructure.MongoDb.Documents;
+using GtMotive.Estimate.Microservice.Infrastructure.MongoDb.Mappers;
+using GtMotive.Estimate.Microservice.Infrastructure.MongoDb.Repositories;
+using GtMotive.Estimate.Microservice.Infrastructure.MongoDb.Settings;
 using GtMotive.Estimate.Microservice.InfrastructureTests.Infrastructure;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
@@ -21,7 +23,7 @@ namespace GtMotive.Estimate.Microservice.InfrastructureTests.Specs
         public VehicleRepositoryInfrastructureTests(GenericInfrastructureTestServerFixture fixture)
             : base(fixture)
         {
-            var mongoService = new MongoService(Options.Create(new Microservice.Infrastructure.Persistence.MongoDb.Settings.MongoDbSettings
+            var mongoService = new MongoService(Options.Create(new MongoDbSettings
             {
                 ConnectionString = GenericInfrastructureTestServerFixture.MongoConnectionString,
                 DbName = "gtMotiveEstimate"
@@ -37,7 +39,7 @@ namespace GtMotive.Estimate.Microservice.InfrastructureTests.Specs
             _vehicleRepository = new VehicleRepository(mongoService, mapper);
 
             // Clean up the collection before each test
-            _database.GetCollection<Microservice.Infrastructure.Persistence.MongoDb.Documents.VehicleDocument>("Vehicles").DeleteMany(Builders<Microservice.Infrastructure.Persistence.MongoDb.Documents.VehicleDocument>.Filter.Empty);
+            _database.GetCollection<VehicleDocument>("Vehicles").DeleteMany(Builders<VehicleDocument>.Filter.Empty);
         }
 
         [Fact]

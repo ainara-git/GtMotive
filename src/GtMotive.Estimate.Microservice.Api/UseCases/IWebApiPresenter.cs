@@ -1,4 +1,4 @@
-﻿using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Common;
+﻿using GtMotive.Estimate.Microservice.ApplicationCore.UseCases;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GtMotive.Estimate.Microservice.Api.UseCases

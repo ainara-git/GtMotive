@@ -1,5 +1,4 @@
 ﻿using System;
-using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Common;
 
 namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.ReturnVehicle
 {

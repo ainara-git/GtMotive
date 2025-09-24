@@ -1,6 +1,4 @@
-﻿using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Common;
-
-namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.ReturnVehicle
+﻿namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.ReturnVehicle
 {
     /// <summary>
     /// Output port for the return vehicle use case.

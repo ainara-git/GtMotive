@@ -6,7 +6,7 @@ using GtMotive.Estimate.Microservice.Api.Authorization;
 using GtMotive.Estimate.Microservice.Api.DependencyInjection;
 using GtMotive.Estimate.Microservice.Api.Filters;
 using GtMotive.Estimate.Microservice.ApplicationCore;
-using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Common.Behaviours;
+using GtMotive.Estimate.Microservice.ApplicationCore.Behaviours;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;

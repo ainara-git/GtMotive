@@ -1,5 +1,4 @@
 ﻿using System;
-using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Common;
 using MediatR;
 
 namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.RentVehicle

@@ -3,7 +3,7 @@ using Acheve.AspNetCore.TestHost.Security;
 using Acheve.TestHost;
 using GtMotive.Estimate.Microservice.Api;
 using GtMotive.Estimate.Microservice.Infrastructure;
-using GtMotive.Estimate.Microservice.Infrastructure.Persistence.MongoDb.Settings;
+using GtMotive.Estimate.Microservice.Infrastructure.MongoDb.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

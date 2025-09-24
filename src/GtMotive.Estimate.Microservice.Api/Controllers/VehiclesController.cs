@@ -1,7 +1,10 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
-using GtMotive.Estimate.Microservice.Api.Requests;
 using GtMotive.Estimate.Microservice.Api.UseCases;
+using GtMotive.Estimate.Microservice.Api.UseCases.AddVehicle;
+using GtMotive.Estimate.Microservice.Api.UseCases.GetAvailableVehicles;
+using GtMotive.Estimate.Microservice.Api.UseCases.RentVehicle;
+using GtMotive.Estimate.Microservice.Api.UseCases.ReturnVehicle;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.AddVehicle;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.GetAvailableVehicles;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.RentVehicle;
